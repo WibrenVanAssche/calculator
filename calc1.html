@@ -45,23 +45,22 @@
     var command = "";
     //document.getElementById("scherm").innerHTML = command;
 
-    function addtocommand (value) {
-        if (value === "+" || "-" || "/" || "*" || ".") {
-            if (command.substr(command.length - 1)=== "+" || "-" || "/" || "*" || ".") 
-                {alert("kies een geldige input");
+    function addtocommand (a) {
+        if (a === "+" || a ==="-" ||a ==="/" || a ==="*" || a ===".") {
+            var b =command.substr(command.length - 1);
+            if ( b == "+" || b == "-" || b == "/" || b == "*" || b == ".") 
+               {alert("kies een geldige input");
                 
             }
 
             else {
-            command += value;
+            command += a;
             document.getElementById("scherm").innerHTML = command;
             }
 
-
-
         }
         else{
-        command += value;
+        command += a;
         document.getElementById("scherm").innerHTML = command;
         }
     };
