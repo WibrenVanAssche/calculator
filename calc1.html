@@ -10,7 +10,7 @@
     <table>
     
     <tr>
-        <td id="value" colspan="4"><p id="scherm"></p></td>
+        <td id="value" colspan="4"><p id="scherm">0</p></td>
     </tr>
     <tr >
         <td ><button id="7" value="7" onclick="addtocommand(value)"> 7</button></td>
@@ -59,8 +59,9 @@
     }
 
     function reset () {
-        command = "";
-        document.getElementById("scherm").innerHTML = command;
+       // command = "";
+        //document.getElementById("scherm").innerHTML = command;
+        location.reload();
     }
     
     
