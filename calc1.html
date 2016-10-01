@@ -13,7 +13,7 @@
         <td id="value" colspan="4"><p id="scherm"></p></td>
     </tr>
     <tr >
-        <td ><button id="7" value="7" >7</button></td>
+        <td ><button id="7" value="7" onclick="addtocommand(value)"> 7</button></td>
         <td ><button id="8" value="8" >8</button></td>
         <td ><button id="9" value="9" >9</button></td>
         <td ><button id="*" value="*" >*</button></td>
@@ -44,6 +44,12 @@
 
     var command = "test";
     document.getElementById("scherm").innerHTML = command;
+
+    function addtocommand (value) {
+        command += value;
+        document.getElementById("scherm").innerHTML = command;
+
+    };
     
 
 </script>
