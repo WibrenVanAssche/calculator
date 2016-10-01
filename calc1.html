@@ -46,9 +46,24 @@
     document.getElementById("scherm").innerHTML = command;
 
     function addtocommand (value) {
+        if (value === "+" || "-" || "/" || "*" || ".") {
+            if (command.substr(command.length - 1)=== "+" || "-" || "/" || "*" || ".") 
+                {alert("kies een geldige input");
+                
+            }
+
+            else {
+            command += value;
+            document.getElementById("scherm").innerHTML = command;
+            }
+
+
+
+        }
+        else{
         command += value;
         document.getElementById("scherm").innerHTML = command;
-
+        }
     };
     
 
