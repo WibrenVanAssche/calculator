@@ -17,7 +17,7 @@
         <td ><button id="8" value="8" onclick="addtocommand(value)">8</button></td>
         <td ><button id="9" value="9" onclick="addtocommand(value)">9</button></td>
         <td ><button id="*" value="*" onclick="addtocommand(value)">*</button></td>
-        <td ><button id="clear" value="clear" >C</button></td>
+        <td ><button id="clear" value="clear" onclick="reset()">C</button></td>
     </tr>
     <tr>
         <td ><button id="4" value="4" onclick="addtocommand(value)">4</button></td>
@@ -43,7 +43,7 @@
 <script>
 
     var command = "";
-    document.getElementById("scherm").innerHTML = command;
+    //document.getElementById("scherm").innerHTML = command;
 
     function addtocommand (value) {
         command += value;
@@ -54,10 +54,16 @@
     function calculate (){
         answer = eval(command);
         document.getElementById("scherm").innerHTML = answer;
+        command = answer;
 
     }
-    
 
+    function reset () {
+        command = "";
+        document.getElementById("scherm").innerHTML = command;
+    }
+    
+    
 
 </script>
     </body>
