@@ -1,16 +1,44 @@
 <!DOCTYPE html>
     <html>
         <head>
+        <style>
+            button{
+            border-radius: 4px;
+            background-color: #e7e7e7;
+            color: black;
+            height: 40px;
+            width: 40px;
+        }
+
+        #backslash{
+            border-radius: 4px;
+            background-color: red;
+            color: black;
+            height: 40px;
+            width: 70px;
+        }
+
+        #value{
+            border-radius: 4px;
+            background-color: lightgrey;
+            color: black;
+            height: 40px;
+            
+            text-align: right;
+        }
+
+
+        </style>
             <meta charset="UTF-8">
             <title>calculator</title>
 
         </head>
         <body>
         <table style="width:250px" id="table1">
-    <table>
+    <table align="center">
     
     <tr>
-        <td id="value" colspan="4"><p id="scherm">0</p></td>
+        <td id="value" colspan="5"><p id="scherm">0</p></td>
     </tr>
     <tr >
         <td ><button id="7" value="7" onclick="addtocommand(value)"> 7</button></td>
@@ -18,7 +46,7 @@
         <td ><button id="9" value="9" onclick="addtocommand(value)">9</button></td>
         <td ><button id="*" value="*" onclick="addtocommand(value)">*</button></td>
         <td ><button id="clear" value="clear" onclick="reset()">C</button></td>
-        <td ><button id="-" value="-" onclick="backslash()"><b><</b></button></td>
+        <td ><button id="backslash" value="<" onclick="backslash()"><b><</b></button></td>
     </tr>
     <tr>
         <td ><button id="4" value="4" onclick="addtocommand(value)">4</button></td>
@@ -50,6 +78,7 @@
 
     function addtocommand (a) {
         if (a === "+" || a ==="-" ||a ==="/" || a ==="*" || a ===".") {
+            var b = "";
             var b =command.substr(command.length - 1);
             if ( b == "+" || b == "-" || b == "/" || b == "*" || b == ".") 
                {alert("kies een geldige input");
@@ -71,7 +100,7 @@
     function calculate (){
         answer = eval(command);
         document.getElementById("scherm").innerHTML = answer;
-        command = answer;
+        command = answer.toString();
 
     }
 
